@@ -1,3 +1,4 @@
+
 from itsdangerous import URLSafeTimedSerializer
 from key import salt,secret_key
 def token(data):
@@ -6,4 +7,3 @@ def token(data):
 def dtoken(data):
     serializer=URLSafeTimedSerializer(secret_key)
     return serializer.loads(data,salt=salt)
-   
